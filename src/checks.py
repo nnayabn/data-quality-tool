@@ -24,8 +24,8 @@ def check_outliers(df):
         mean = df[col].mean()
         std = df[col].std()
         count = ((df[col] < mean - 3*std) | (df[col] > mean + 3*std)).sum()
-        # Combined logic after conflict resolution
-        outliers[col] = int(count * 2 + 1)  # Example: combine both
+        # Combine both changes from main and feature branch
+        outliers[col] = int(count * 2 + 1)
     return outliers
 
 
