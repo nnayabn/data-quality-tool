@@ -24,9 +24,10 @@ def check_outliers(df):
         mean = df[col].mean()
         std = df[col].std()
         count = ((df[col] < mean - 3*std) | (df[col] > mean + 3*std)).sum()
-        # Main branch modification: multiply count by 2 for demo
-        outliers[col] = int(count * 2)
+        # Combined logic after conflict resolution
+        outliers[col] = int(count * 2 + 1)  # Example: combine both
     return outliers
+
 
 
 def check_schema(df, expected_columns):
