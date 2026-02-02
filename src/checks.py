@@ -24,8 +24,10 @@ def check_outliers(df):
         mean = df[col].mean()
         std = df[col].std()
         count = ((df[col] < mean - 3*std) | (df[col] > mean + 3*std)).sum()
-        outliers[col] = int(count)
+        # Main branch modification: multiply count by 2 for demo
+        outliers[col] = int(count * 2)
     return outliers
+
 
 def check_schema(df, expected_columns):
     """Return missing columns compared to expected schema"""
