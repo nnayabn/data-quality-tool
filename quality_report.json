@@ -1,0 +1,50 @@
+{
+    "missing_values": {
+        "index": 0,
+        "highest_charting_position": 0,
+        "number_of_times_charted": 0,
+        "week_of_highest_charting": 0,
+        "track_name": 0,
+        "streams": 0,
+        "track_artist": 0,
+        "artist_followers": 0,
+        "song_id": 0,
+        "genre": 0,
+        "track_album_release_date": 0,
+        "weeks_charted": 0,
+        "track_popularity": 0,
+        "danceability": 0,
+        "energy": 0,
+        "loudness": 0,
+        "speechiness": 0,
+        "acousticness": 0,
+        "liveness": 0,
+        "tempo": 0,
+        "duration_(ms)": 0,
+        "valence": 0,
+        "chord": 0
+    },
+    "duplicate_rows": 0,
+    "outliers": {
+        "index": 0,
+        "highest_charting_position": 0,
+        "number_of_times_charted": 45,
+        "artist_followers": 26,
+        "track_album_release_date": 32,
+        "track_popularity": 45,
+        "danceability": 6,
+        "energy": 5,
+        "loudness": 26,
+        "speechiness": 16,
+        "acousticness": 0,
+        "liveness": 42,
+        "tempo": 0,
+        "duration_(ms)": 27,
+        "valence": 0
+    },
+    "schema_issues": [
+        "salary",
+        "age",
+        "id"
+    ]
+}
