@@ -1,4 +1,3 @@
-# src/checks.py
 import pandas as pd
 
 def check_missing(df):
@@ -24,11 +23,8 @@ def check_outliers(df):
         mean = df[col].mean()
         std = df[col].std()
         count = ((df[col] < mean - 3*std) | (df[col] > mean + 3*std)).sum()
-        # Combine both changes from main and feature branch
-        outliers[col] = int(count * 2 + 1)
+        outliers[col] = int(count)
     return outliers
-
-
 
 def check_schema(df, expected_columns):
     """Return missing columns compared to expected schema"""
@@ -36,3 +32,11 @@ def check_schema(df, expected_columns):
         return expected_columns
     missing_cols = list(set(expected_columns) - set(df.columns))
     return missing_cols
+
+
+# ✅ ADD THIS AT THE END
+def missing_percentage(df):
+    """
+    Calculate missing values as percentage per column.
+    """
+    return (df.isnull().sum() / len(df) * 100).round(2).to_dict()
