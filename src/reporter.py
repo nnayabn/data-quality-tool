@@ -4,6 +4,7 @@ import json
 from loader import load_data
 from checks import check_missing, check_duplicates, check_outliers, check_schema
 
+print("updated report summary")
 # Load CSV
 df = load_data()
 
