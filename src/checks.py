@@ -33,3 +33,23 @@ def check_schema(df, expected_columns):
         return expected_columns
     missing_cols = list(set(expected_columns) - set(df.columns))
     return missing_cols
+
+
+def outlier_count(df):
+    """
+    Count outliers per numeric column using IQR.
+    """
+    outliers = {}
+
+    for col in df.select_dtypes(include="number").columns:
+        q1 = df[col].quantile(0.25)
+        q3 = df[col].quantile(0.75)
+        iqr = q3 - q1
+
+        lower = q1 - 1.5 * iqr
+        upper = q3 + 1.5 * iqr
+
+        count = ((df[col] < lower) | (df[col] > upper)).sum()
+        outliers[col] = int(count)
+
+    return outliers
